@@ -18,21 +18,19 @@
     \node [int, right=of SI, ultra thick] (SR)             {$SR$};
     \node [int, right=of RS, ultra thick] (RI)             {$RI$};
     \node [int, right=of RI, ultra thick] (RR)             {$RR$};
-    \path[->, ultra thick, left] (SS) edge node {$\lambda_1$} (IS);
+    \path[->, ultra thick, left] (SS) edge node {$(1-\sigma_{21}) \lambda_1$} (IS);
+    \path[->, ultra thick, left, above, sloped] (SS) edge node [xshift=-20mm] {$\sigma_{21} \lambda_1$} (IR);
     \path[->, ultra thick, left] (IS) edge node {$\gamma$} (RS);
     \path[->, ultra thick, left] (IR) edge node {$\gamma$} (RR);
-    \path[->, ultra thick, above] (SS) edge node {$\lambda_2$} (SI);
+    \path[->, ultra thick, above] (SS) edge node {$(1-\sigma_{12}) \lambda_2$} (SI);
+    \path[->, ultra thick, below, sloped] (SS) edge node [xshift=-20mm] {$\sigma_{12} \lambda_2$} (RI);
     \path[->, ultra thick, above] (SI) edge node {$\gamma$} (SR);
     \path[->, ultra thick, above] (RI) edge node {$\gamma$} (RR);
-    \path[->, ultra thick, above] (RS) edge node {$(1-\sigma_{12}) \lambda_2$} (RI);
-    \path[->, ultra thick, dashed, out=-45, in=-135] (RS) edge node {} (RR);
-    \path[->, ultra thick, dashed, out=-45, in=-135] (IS) edge node {} (IR);
-    \path[->, ultra thick, dashed, out=-45, in=45] (SR) edge node {} (RR);
-    \path[->, ultra thick, dashed, out=-45, in=45] (SI) edge node {} (RI);
-    \path[->, ultra thick, left] (SR) edge node {$(1-\sigma_{21}) \lambda_1$} (IR);
-    \path[->, ultra thick, above] (IS) edge node {$(1-\sigma_{12}) \lambda_2$} (II);
-    \path[->, ultra thick, left] (SI) edge node {$(1-\sigma_{21}) \lambda_1$} (II);
-    \path[->, ultra thick, left] (II) edge node [yshift=-5mm] {$\gamma$} (RI);
-    \path[->, ultra thick, above] (II) edge node [xshift=-5mm] {$\gamma$} (IR);
+    \path[->, ultra thick, above] (RS) edge node {$\lambda_2$} (RI);
+    \path[->, ultra thick, left] (SR) edge node {$\lambda_1$} (IR);
+    \path[->, ultra thick, above] (IS) edge node [xshift=-5mm] {$\lambda_2$} (II);
+    \path[->, ultra thick, left] (SI) edge node [yshift=5mm] {$\lambda_1$} (II);
+    \path[->, ultra thick, left] (II) edge node {$\gamma$} (RI);
+    \path[->, ultra thick, above] (II) edge node {$\gamma$} (IR);
 \end{tikzpicture}
 \end{document}
